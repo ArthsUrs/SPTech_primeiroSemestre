@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o limite inferior da amostragem
+    <input type="number" id="i_inferior">
+
+    Qual o limite supererior da amostragem
+    <input type="number" id="i_superior">
+
+    teste de divisibilidade 
+    <input type="number" id="i_divisivel">
+
+    <button onclick="conta()">
+        Contar
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function conta() {
+
+        mensagem.innerHTML = "";
+
+        var infe = Number(i_inferior.value);
+        var supe = Number(i_superior.value);
+        var divi = Number(i_divisivel.value);
+
+        var meio = supe - infe;
+
+        var contador = 1; 
+
+        if (infe < 1 || supe > 100 || divi > 10 || divi < 3) {
+            alert("Erro, não foi possível prosseguir")
+        } else {
+            while (contador <= supe) {
+                if(contador % divi != 0) {
+                    mensagem.innerHTML += `numeros diviseis: ${contador}`
+                }
+
+            numero += 1;
+            }
+        }
+
+    }
+</script>

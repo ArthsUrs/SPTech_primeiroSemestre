@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="border-bottom: 10px; color: blue;">
+        <span>
+            Total guardado no cofrinho: R$0
+            <br>Depósitos efetuados: 0
+            <br>Retiradas efetuadas: 0
+        </span>
+    </div>
+    <br><br>
+
+    <button id="teste" onclick="depositar1()">
+        Depositar 0,50
+    </button>
+
+    <br>
+
+    <button onclick="depositar2()">
+        Depositar 2,00
+    </button>
+
+    <br>
+    
+    <button onclick="retirar1()">
+        Retirar 0,50
+    </button>
+
+    <br>
+
+    <label for="i_retirarManual">
+        Valor
+    </label>
+        <input type="number" id="i_retirarManual">
+
+    <button onclick="retirar2()">
+        Retirar
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var dep = 0;
+
+    var ret50 = 0;
+    var retX = 0;
+
+    var qtdDep = 0;
+    var qtdRet = 0;
+
+    function depositar1() {
+        qtdDep += 1;
+        dep += 0.5;
+        mensagem.innerHTML = `Total guardado no cofrinho: R$${dep}
+            <br>Depósitos efetuados: ${qtdDep}
+            <br>Retiradas efetuadas: ${qtdRet}`
+    }
+
+    function depositar2() {
+        qtdDep += 1;
+        dep += 2;
+        mensagem.innerHTML = `Total guardado no cofrinho: R$ ${dep}
+            <br>Depósitos efetuados: ${qtdDep}
+            <br>Retiradas efetuadas: ${qtdRet}`
+    }
+
+    function retirar1() {
+        qtdRet += 1;
+        retX += 0.50;
+        mensagem.innerHTML = `Total guardado no cofrinho: R$ ${dep - retX}
+            <br>Depósitos efetuados: ${qtdDep}
+            <br>Retiradas efetuadas: ${qtdRet}`
+    }
+
+    function retirar2() {
+        qtdRet += 1;
+        retX = Number(i_retirarManual.value);
+        mensagem.innerHTML = `Total guardado no cofrinho: R$ ${dep - retX}
+            <br>Depósitos efetuados: ${qtdDep}
+            <br>Retiradas efetuadas: ${qtdRet}`
+    }
+</script>

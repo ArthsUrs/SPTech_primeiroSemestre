@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_rendaI">Qual sua renda aproximada??</label>
+    <input type="number" id="i_rendaI">
+
+    <label for="i_rendaF">Qual a renda familiar aproximada??</label>
+    <input type="number" id="i_rendaF">
+
+    <button onclick="Auxilio()">Benefício</button>
+</body>
+
+</html>
+
+
+<script>
+    function Auxilio() {
+        var rendaI= Number(i_rendaI.value);
+        var rendaF = Number(i_rendaF.value);
+
+        if (rendaI <= 1050 && rendaF <= 2100) alert("Você terá direito!");
+
+        else alert("Você NÃO terá direito");
+    }
+</script>

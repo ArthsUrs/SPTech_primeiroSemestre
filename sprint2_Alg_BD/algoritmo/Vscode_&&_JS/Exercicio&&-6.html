@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_notaAluno">
+        Qual a sua nota?
+    </label>
+    <input type="number" id="i_notaAluno">
+
+    <label for="i_presenca">
+        Qual a presença do aluno?
+    </label>
+    <input type="number" id="i_presenca">
+
+    <button onclick="analiseMedia()">
+        avaliar Aluno
+    </button>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function analiseMedia() {
+        var nota = Number(i_notaAluno.value);
+        var freq = Number(i_presenca.value);
+
+        if (nota < 6 && freq < 75) alert ("Não foi dessa vez");
+        else  alert ("Parabéns Aprovado!!");
+    }
+</script>

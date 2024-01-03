@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_premiacaoTotal">Qual o valor da premiação?</label>
+    <input type="number" id="i_premiacaoTotal">
+
+    <br>
+
+    <label for="i_maxRodadas">Número máximo de rodadas</label>
+    <input type="number" id="i_maxRodadas">
+
+    <br>
+
+    Resultado time A: <select id="selectResultado1">
+        <option value="3">Vitoria</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select> <br>
+
+    Resultado time B: <select id="selectResultado2">
+        <option value="3">Vitoria</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select> <br>
+
+    Resultado time C: <select id="selectResultado3">
+        <option value="3">Vitoria</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select> <br>
+
+    <button onclick="RealizarRodada()">
+        Realizar rodada
+    </button>
+    
+
+    <div id="RodadaInicio">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function RealizarRodada() {
+        var rodada = Number(i_maxRodadas.value)
+        var total = Number(i_premiacaoTotal.value)
+        var pontos = Number(selectResultado1.value)
+
+
+        if (total < 1000 || rodada < 1) {
+            alert ("Dados Invalidos para continuar")
+        } 
+        else{
+            RodadaInicio.innerHTML += `
+            Time 1: ${pontos} <br>
+            Time 2: ${pontos} <br>
+            Time 3: ${pontos} <br>
+            `
+        }
+    }
+</script>

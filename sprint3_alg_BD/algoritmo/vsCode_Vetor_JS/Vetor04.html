@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quais seus filmes preferidos:
+    <input type="text" id="i_filmePreferido">
+    <button onclick="cadastrar()">
+        Cadastrar filme
+    </button>
+    <br>
+    <button onclick="mostrar()">
+        mostrar filmes
+    </button>
+    <div id="mensagem">
+
+    </div>
+    <div id="mensagem2">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    listaFilmes = [];
+
+    function cadastrar() {
+        filme = i_filmePreferido.value;
+
+        listaFilmes.push(filme)
+    }
+
+    function mostrar() {
+
+        mensagem.innerHTML = "";
+        mensagem2.innerHTML = "";
+
+        for (i = 1; i <= listaFilmes.length; i++) {
+            mensagem.innerHTML += `
+            ${listaFilmes[listaFilmes.length - i]} <br>
+        `
+        }
+
+        mensagem2.innerHTML += `
+        total de filmes: ${listaFilmes.length} <br>
+            o meu favorito é o ${listaFilmes[0]} <br>
+            e o que eu menos gosto é o ${listaFilmes[listaFilmes.length - 1]}    
+        `
+    }
+
+
+</script>

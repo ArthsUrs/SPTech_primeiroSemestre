@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_tempAtual">
+        Qual a temperatura ambiente?
+    </label>
+    <input type="number" id="i_tempAtual">
+
+    <button onclick="AnaliseTemp()">Analise</button>
+</body>
+
+</html>
+
+<script>
+    function AnaliseTemp() {
+        var temp = Number(i_tempAtual.value);
+
+        /*if (temp <= 20) {
+            alert("Alerta desconfortável")
+            alert("as pessoas podem ficar com hipotermia!")
+        } else if (temp >= 25) {
+            alert ("Alerta desconfortável")
+            alert("As pessoas vão derreter!")
+    } */
+    if (temp < 21 || temp > 24) {
+        alert ("Temperatura desconfortável!");
+        if (temp < 21) alert ("As pessoas vão ter hiportermia");
+        if (temp > 24) alert ("As pessoas vão derreter");
+
+    }
+}
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>
+        Quais filmes deseja colocar na lista?
+    </span>
+    <input type="text" id="i_filmeLista">
+
+    <button onclick="funcaoFilmes()">
+        adicionar filmes
+    </button>
+
+    <div id="mensagem">
+        <p style="color: blue">
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var listaFilme = [];
+
+    function funcaoFilmes() {
+        var filmes = i_filmeLista.value;
+
+        mensagem.innerHTML = ""
+
+        listaFilme.push(filmes);
+
+        for (
+            contador = 0;
+            contador < listaFilme.length;
+            contador += 1
+        ) {
+            if (contador % 2 == 0) {
+                mensagem.innerHTML += `<p style="color: blue">${listaFilme[contador]} <br></p>`
+            } else (
+                mensagem.innerHTML += `<p style="color: red">${listaFilme[contador]} <br></p>`
+            )
+        }
+    }
+
+</script>

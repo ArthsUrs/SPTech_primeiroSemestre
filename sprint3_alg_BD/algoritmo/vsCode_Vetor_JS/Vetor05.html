@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+
+<body>
+    cadastre seus filmes favoritos:
+    <input type="text" id="i_filmeFavorito"> <br>
+    <button onclick="cadastrar()">
+        Cadastrar filmes
+    </button><br><br>
+
+    <div id="mensagem">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    filmes = [];
+
+    function cadastrar() {
+        mensagem.innerHTML += "";
+
+        filme = i_filmeFavorito.value;
+
+        filmes.push(filme);
+
+        for (
+            i = 0;
+            i < filmes.length;
+            i++
+        ) {
+            if (filmes.length < 3) {
+                mensagem.innerHTML = `
+                seu filme favorito é o ${filmes[0]} <br><br>
+                Cadastre 3 filmes para chegar aqui  <br><br>
+                Total de filmes na lista: ${filmes.length}
+            `}
+            else {
+                mensagem.innerHTML = `
+                seu filme favorito é o ${filmes[0]} <br><br>
+                Seu 3 filme favorito é: ${filmes[2]}<br><br>
+                Total de filmes na filmes: ${filmes.length}
+            `}
+
+        }
+    }
+</script>

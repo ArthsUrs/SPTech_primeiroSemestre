@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 style="color: green;">Quantas calorias o usuario come por dia</h1>
+</head>
+<body>
+    <label for="i_paes">Quantos pães franceses você come por dia?</label>
+    <input type="number" id="i_paes">
+<br>
+    <label for="i_bolacha">Quantas bolachas você come por dia?</label>
+    <input type="number" id="i_bolacha">
+<br>
+    <label for="i_chocolate">Quantos achocolatados você come por dia</label>
+    <input type="number" id="i_chocolate">
+<br>
+    <button onclick="CalculoCalorias()"> Quantidade de calorias por dia</button>
+<br>
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    function CalculoCalorias() {
+        var pao = (Number(i_paes.value) * 50);
+        var bolacha = (Number(i_bolacha.value) * 80);
+        var chocolate = (Number(i_chocolate.value) * 70);
+
+        var CalDia = pao + bolacha + chocolate
+
+        if (CalDia <= 200) mensagem.innerHTML = `Parabens, vai ficar em forma!, está comendo ${CalDia}`;
+        else if (CalDia <= 400) mensagem.innerHTML = `Cuidado, vai ficar menos saudável, está comendo ${CalDia}`;
+        else mensagem.innerHTML = `Alerta crítico de saúde!!!, está comendo ${CalDia}`;
+    }
+</script>

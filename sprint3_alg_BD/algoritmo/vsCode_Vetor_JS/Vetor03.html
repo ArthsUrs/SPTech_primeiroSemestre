@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    cadastre os bairros onde morou:
+    <input type="text" id="i_bairros">
+    <br><br>
+    <button onclick="cadastro()">
+        Cadastrar bairro:
+    </button>
+    <br><br>
+    relembre a moradia:
+    <input id="i_relembrarbairro">
+    <br><br>
+    <button onclick="relembrar()">
+        relembre moradira
+    </button>
+    <br><br>
+    <div id="mensagem">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    bairro = []
+
+    function cadastro() {
+        var morado = i_bairros.value;
+
+        bairro.push(morado)
+    }
+    function relembrar() {
+        mensagem.innerHTML = "";
+
+        morou = i_relembrarbairro.value;
+
+        if (morou > bairro.length) {
+            alert("você nao morou em tantos bairros assim!")
+        } else {
+            for (i = 1; i <= bairro.length; i++) {
+                if(i == morou){
+                    mensagem.innerHTML += `o bairro numero ${i} que você morou é o ${bairro[morou - 1]}<br>`
+                }
+            }
+        }
+    }
+</script>

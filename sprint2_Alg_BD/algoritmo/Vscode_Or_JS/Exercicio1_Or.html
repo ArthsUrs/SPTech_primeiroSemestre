@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercicio 1:  Frutas</h1>
+
+    <label for="i_Fruta">Qual fruta ser comida?</label>
+        <input id="i_Fruta">
+
+    <button onclick="AnaliseFruta()">Analise</button>
+
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    function AnaliseFruta() {
+        var fruta = i_Fruta.value;
+        
+
+        if (fruta == "uva" || fruta == "abacaxi") mensagem.innerHTML = "Ela comerá a Fruta"
+        
+        else mensagem.innerHTML = "Ela não comerá a fruta"
+    }
+</script>

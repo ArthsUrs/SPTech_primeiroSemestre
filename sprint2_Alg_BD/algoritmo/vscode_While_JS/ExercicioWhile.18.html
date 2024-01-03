@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas coca-colas vocẽ acha que já bebeu na vida?
+        <input type="number" id="i_qtdCoca">
+
+
+    <button onclick="quantidadeCocaCola()">
+        ver quantidade
+    </button>
+
+    <div id="mensagem">
+        
+    </div>
+</body>
+</html>
+
+<script>
+    function quantidadeCocaCola(){
+        mensagem.innerHTML = "";
+
+        
+        var coca = Number(i_qtdCoca.value);
+        var numero = 1;
+
+        while (numero <= coca) {
+            mensagem.innerHTML += `<img src="https://png.pngtree.com/png-clipart/20200225/original/pngtree-emoji-of-the-smiling-soda-bottle-vector-or-color-illustration-png-image_5268844.jpg" alt=""> <br>`
+
+            numero += 1;
+        }
+
+    }
+</script>

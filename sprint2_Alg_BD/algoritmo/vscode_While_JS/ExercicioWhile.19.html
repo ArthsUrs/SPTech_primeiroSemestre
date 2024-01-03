@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantas xicaras de café com leite você ja tomou na vida?
+        <input type="text" id="i_xicaras">
+
+    <button onclick="qtdCafe()">
+        ver quantidade
+    </button>
+    
+    <div id="mensagem">
+
+    </div>
+</html>
+
+
+<script>
+    function qtdCafe() {
+        var xicara = Number(i_xicaras.value);
+        var numero = 1;
+        var outro = 1;
+
+
+        while (numero <= xicara) {
+            mensagem.innerHTML += `<img src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" alt="">`
+        numero += 1;
+        }
+</script>

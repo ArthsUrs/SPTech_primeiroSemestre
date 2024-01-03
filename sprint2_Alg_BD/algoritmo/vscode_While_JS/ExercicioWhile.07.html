@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="i_numeroMultiplo">
+        informe um numero de 20 a 100
+    </label>
+    <input type="number" id="i_numeroMultiplo">
+
+    <button onclick="AnalisarMultiplo()">
+        Adoro multiplos de 5
+    </button>
+</body>
+</html>
+
+<script>
+    function AnalisarMultiplo() {
+        numero = 20;
+        numeroInp = Number(i_numeroMultiplo);
+
+        while (numero >= numeroInp) {
+            mensagem.innerHTML += `${numero} <br>`
+        numero += 5;
+        }
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 style="color: purple;">Exercicio 1</h1>
+</head>
+<body>
+    <label for="i_altura">
+        Qual a altura do atleta/aluno:
+    </label>
+    <input type="number" id="i_altura">
+<br>
+    <button onclick="medir()">
+        Ver esporte praticável
+    </button>
+</body>
+</html>
+
+<script>
+    function medir() {
+        var m = Number(i_altura.value);
+
+        if (m < 1.65) alert("Você pode ser piloto(a) de corrida")
+        else if (m < 1.80) alert("Você pode ser jogador(a) de futebol")
+        else alert("Você pode jogar ou volêi ou basquete!")
+    }
+</script>

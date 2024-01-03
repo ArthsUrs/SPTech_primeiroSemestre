@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="apertarbotao()">Clique em mim</button>
+
+    <div id="contagem">
+        cliques: 
+    </div>
+</body>
+</html>
+
+<script>
+    var numero = 0; //pode ser chamada em qualquer fucção do codigo // tem o valor mantido, a não ser que o valor seja resetado //  
+
+    // var nome = ${tecoteco.value} ----> não pode ser feito, a variavel é carregada quando de inicia a pagina, logo o valor do INPUT é 0, vazio. 
+    function apertarbotao() {
+        numero += 1;
+        contagem.innerHTML = `${numero}`
+        
+    }
+</script>

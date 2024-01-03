@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos depositos você fez no banco?
+        <input type="number" id="i_qtdDeposito">
+    <br>
+    Qual o valor de cada depósito?
+        <input type="number" id="i_qtdDinheiro">
+
+    <button onclick="verDeposito()">
+        acompanhar grana
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function verDeposito() {
+        mensagem.innerHTML += ""
+
+        var qtdDep = Number(i_qtdDeposito.value);
+        var qtdDin = Number(i_qtdDinheiro.value);
+        numero = 1;
+
+        while (numero <= qtdDep) {
+            mensagem.innerHTML += `${numero}° Mês: R$${conta} <br>`;
+                if (numero == qtdDep) {
+                    mensagem.innerHTML += `Total guardado: ${conta}`
+                }
+
+        numero += 1;
+        var conta = numero * qtdDep;
+        }
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pagamento</h1>
+    <label for="i_pagamento">
+        Qual o método de pagamento?
+    </label>
+    <input type="text" id="i_pagamento">
+
+    <button onclick="Analise()">Analise</button>
+</body>
+</html>
+
+<script>
+    function Analise() {
+        var pag = i_pagamento.value;
+
+        if (pag == "debito" || pag == "dinheiro") alert ("Você terá que pagar a vista!");
+        else if (pag == "credito" || pag == "boleto") alert ("Você podera dividir o valor!");
+    }
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    os nomes das linhas de ônibus que ele pegou durante a semana
+    <input type="text" id="i_busaoDiario">
+    <button onclick="functionGuardar()">
+        Gravar busão
+    </button>   
+<br> <br>
+    Pesquisar linha que ja pegou
+    <input type="text" id="i_linhaPega">
+    <button onclick="funcaoPesquisar()">
+        Pesquisar
+    </button>
+
+    <div id="mensagem1">
+
+    </div>
+
+    <div id="mensagem2">
+
+    </div>
+</body>
+</html>
+
+<script>
+    onibus = []
+    function functionGuardar() {
+        mensagem1.innerHTML = "";
+
+        var pegos = i_busaoDiario.value;
+
+        onibus.push(pegos);
+
+        for (
+            contador = 1;
+            contador < onibus.length;
+            contador += 1
+        ) {
+            mensagem1.innerHTML += `${onibus[onibus.length - contador]}<br>`
+        }
+    }
+
+    function funcaoPesquisar() {
+        mensagem2.innerHTML = "";
+
+        var pegos = i_busaoDiario.value;
+
+        for (
+            contador = 0;
+            contador < onibus;
+            contador += 1
+        )
+        if (onibus[contador] == pegos) {
+
+        }else (
+            mensagem2.innerHTML += `Você nunca pegou essa linha ou nunca a cadastrou`
+        )
+        
+    }
+</script>

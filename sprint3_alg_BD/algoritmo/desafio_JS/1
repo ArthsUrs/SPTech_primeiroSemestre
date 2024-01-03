@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Insira as informações do usuario
+    </h1>
+
+    <span>
+        Nome do astronauta:
+    </span>
+    <input type="text" id="i_nomeAstronauta">
+    <br>
+    <span>
+        Quantidade de dias;
+    </span>
+    <input type="text" id="i_dias">
+    <br>
+    <span>
+        Quantidade de horas
+    </span>
+    <input type="text" id="i_horas">
+    <br>
+    <span>
+        Quantidade de minutos
+    </span>
+    <input type="text" id="i_minutos">
+
+    <br><br>
+
+    <button onclick="estrelas()">
+        Registrar viagem
+    </button>
+
+    <button onclick="relatorioViagem()">
+        Relatorio de Viagem
+    </button>
+
+    <br><br>
+
+    <div id="mensagem">
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    astronauta = [];
+    tempo = [];
+
+    var nome = "";
+    var dias = "";
+    var horas = "";
+    var minutos = "";
+
+    var dias_minutos = "";
+    var horas_minutos = "";
+
+
+    var minutoTotal = "";
+
+    function estrelas() {
+        nome = i_nomeAstronauta.value;
+        dias = i_dias.value;
+        horas = i_horas.value;
+        minutos = i_minutos.value;
+
+        dias_minutos = dias * 1440;
+        horas_minutos = horas * 60;
+
+        minutoTotal = minutos + dias_minutos + horas_minutos;
+
+        if (dias > 0 || horas > 0 || minutos > 0) {
+            astronauta.push(nome);
+            tempo.push(minutoTotal);
+        } else {
+            alert("Informe um tempo valido");
+        }
+    }
+
+    function relatorioViagem() {
+
+        mensagem.innerHTML = "";
+
+        for (i = 1; i <= astronauta.length; i++) {
+
+            minutosAno = (tempo[i] / 525600);
+            if (minutosAno <= 13) {
+                mensagem.innerHTML += `Viagem ${i}: 
+                                    Astronauta ${astronauta[i] - 1} ficou fora por pelo menos ${minutosAno} anos no tempo da Terra. <br>
+                                    A criança que nasceu quando ele saiu provavelmente está assim: <br>
+                                    <img src="/images/13.png" alt="">
+`
+            }
+            else if (minutosAno <= 30) {
+                mensagem.innerHTML += `Viagem ${i}:
+                                    Astronauta ${astronauta[i] - 1} ficou fora por pelo menos ${minutosAno} anos no tempo da Terra. <br>
+                                    A criança que nasceu quando ele saiu provavelmente está assim: <br>
+                                    <img src="/images/30.png" alt="">
+`
+            }
+            else if (minutosAno <= 65) {
+                mensagem.innerHTML += `Viagem ${i}:
+                                    Astronauta ${astronauta[i] - 1} ficou fora por pelo menos ${minutosAno} anos no tempo da Terra. <br>
+                                    A criança que nasceu quando ele saiu provavelmente está assim: <br>
+                                    <img src="/images/65.png" alt="">
+`
+            }
+            else if (minutosAno <= 100) {
+                mensagem.innerHTML += `Viagem ${i}:
+                                    Astronauta ${astronauta[i] - 1} ficou fora por pelo menos ${minutosAno} anos no tempo da Terra. <br>
+                                    A criança que nasceu quando ele saiu provavelmente está assim: <br>
+                                    <img src="/images/65_100.png" alt="">
+`
+            }
+            else if (minutosAno > 100) {
+                mensagem.innerHTML += `Viagem ${i}:
+                                    Astronauta ${astronauta[i] - 1} ficou fora por pelo menos ${minutosAno} anos no tempo da Terra. <br>
+                                    A criança que nasceu quando ele saiu provavelmente está assim:
+                                    <br>
+                                    <img src="/images/100.png" alt="">
+`
+            }
+        }
+
+    }
+
+</script>

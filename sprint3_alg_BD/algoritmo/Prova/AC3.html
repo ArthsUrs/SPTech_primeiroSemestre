@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tênis Clube SPTECH</title>
+  <style>
+    body {
+      display: flex;
+      align-items: stretch;
+    }
+
+    body div:first-child,
+    body div:nth-of-type(2) {
+      padding: 8px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+    }
+
+    body div:nth-of-type(2) {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <label for="input_qtd_partidas">
+      Rodadas máximas:
+      <input id="input_qtd_partidas" /><br />
+    </label>
+
+    <button onclick="realizar_partida()">Realizar partida</button>
+
+    <h3>Informe as partidas que deseja relembrar</h3>
+
+    <label for="input_inicio_intervalo">Início:</label>
+    <input id="input_inicio_intervalo" />
+    <label for="input_fim_intervalo">Fim:</label>
+    <input id="input_fim_intervalo" />
+
+    <button onclick="relembrar_partidas()">Relembrar</button>
+  </div>
+  <div>
+    <h3>Painel</h3>
+    <div id="div_painel"></div>
+  </div>
+</body>
+
+</html>
+<script>
+
+  rodada = 1;
+
+  jogos = [];
+  jogador1 = [];
+  jogador2 = [];
+
+  function realizar_partida() {
+    var rodadaMax = input_qtd_partidas.value;
+    var ValorMin = 1;
+    var Valormax = 9;
+    var intervalo = Valormax - ValorMin;
+    var aleatorio1 = Math.random() * intervalo + ValorMin;
+    var aleatorio2 = Math.random() * intervalo + ValorMin;
+
+    jogos.push(rodada);
+    jogador1.push(parseInt(aleatorio1));
+    jogador2.push(parseInt(aleatorio2));
+
+    if (rodadaMax <= 0) {
+      alert("Insira um numero de rodadas valido")
+    }
+    else if (rodadaMax >= jogos.length) {
+      div_painel.innerHTML += `Rodada ${rodada} <br>
+      jogador1: ${parseInt(aleatorio1)} <br>
+      jogador2: ${parseInt(aleatorio2)} <br><br>   
+      `
+      for (i = 1; i > rodadaMax; i++) {
+        Total1 += Jogador1[i];
+        Total2 += Jogador2[i];
+        div_painel.innerHTML += `
+        Jogador1: ${total1} <br>
+        Jogador2: ${total2} <br>
+        `
+      }
+    } else {
+      alert("Numero de partidas excedido")
+    }
+    rodada += 1;
+  }
+
+  function relembrar_partidas() {
+
+    div_painel.innerHTML = "";
+
+    var total1 = Number("");
+    var total2 = Number("");
+
+    var inicio = input_inicio_intervalo.value;
+    var fim = input_fim_intervalo.value;
+
+    for (i = 1; i <= jogos.length; i++) {
+      if (i >= inicio && i <= fim) {
+        total1 += jogador1[i - 1];
+        total2 += jogador2[i - 1];
+        div_painel.innerHTML += `Rodada: ${i} <br>
+        jogador 1: ${jogador1[i - 1]} <br>
+        jogador 2: ${jogador2[i - 1]} <br><br>
+        Total<br>
+        Jogador1: ${total1} <br>
+        Jogador2: ${total2} <br><br>`
+      }
+    }
+  }
+
+
+  // SO CONSEGUI SOMAR O PLACAR NOS REGISTROS DA RODADA 
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="https://pbs.twimg.com/media/EupDe4xWQAMdcCt.png"> <br>
+    <button onclick="aumentartamanho()"> Aumentar tamanho</button>
+    <button onclick="diminuirTamanho()"> Diminuir tamanho </button>
+</body>
+</html>
+
+<script>
+    var image = 1000
+
+    function aumentartamanho() {
+        image += 10
+        img.style.width = `${image}px`;
+    }
+
+    function diminuirTamanho() {
+        image -= 10
+        img.style.width = `${image}px`;
+    }
+</script>

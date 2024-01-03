@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="amarMamae">Quem você mais ama?</label>
+        <input type="text" id="amarMamae">
+
+    <label for="qtdAmar">O quanto você ama essa pessoa?</label>
+        <input type="text" id="qtdAmar">
+
+    <button onclick="contadorDeAmor()">
+        amor
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function contadorDeAmor() {
+        var amor = amarMamae.value;
+        var qtdAmor = Number(qtdAmar.value);
+        var numero = 1;
+
+        mensagem.innerHTML = ""
+
+        while (numero <= qtdAmor) {
+
+            mensagem.innerHTML += `${numero}. ${amor} eu te amo! Sempre lembre disso <br>`;
+
+            numero += 1;
+        }
+    }
+</script>

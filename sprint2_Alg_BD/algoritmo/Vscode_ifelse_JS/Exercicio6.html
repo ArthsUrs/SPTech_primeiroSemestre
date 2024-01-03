@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 style="color: black;"> Times de São Paulo</h1>
+</head>
+<body>  
+    <label for="i_time">
+        Insira o time grande de São Paulo para o qual você torce patrão:
+    </label> 
+    <input type="text" id="i_time"> 
+<br>
+    <button onclick="AnaliseTime()">Veja informações sobre o time</button>
+
+    <div id="mensagem">
+    
+    </div>
+</body>
+</html>
+
+<script>
+    function AnaliseTime() {
+
+        var time = i_time.value;
+
+        if (time == "santos") mensagem.innerHTML = `<p style="color: white; background-color: black;"> Agora quem da bola é o santos</p>`  
+        else if (time == "são paulo") mensagem.innerHTML = `<p style="background-color: red; color: white;">Salve o tricolor paulista</p>`
+        else if (time == "palmeiras") mensagem.innerHTML = `<p style="background-color: green; color: white;"> Salve o alviverde impotente</p>`
+        else if (time == "corinthians") mensagem.innerHTML = `<p style="background-color: white; color: black;"> Não salve o corinthians</p>`
+        else mensagem.innerHTML = "Esse não é um time grande de São Paulo, se isso for um time no caso"
+    }
+</script>

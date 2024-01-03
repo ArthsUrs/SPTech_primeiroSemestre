@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="i_qtdMusculacao">
+        De quanto em quantos dias você faz musculação
+    </label>
+    <input type="number" id="i_qtdMusculacao">
+
+    <button onclick="ExibirRotina()">
+        Exibir rotina mensal
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function ExibirRotina() {
+
+        mensagem.innerHTML = "";
+        
+        var QtdMusc = Number(i_qtdMusculacao.value);
+        var contador = 0;
+
+        while (contador <= 30) {
+            if(contador % QtdMusc == 0){
+                mensagem.innerHTML += `Dia ${contador} - Musculação <br>`
+            } else {
+                mensagem.innerHTML += `Dia ${contador} - comer, dormir etc <br>`
+            };
+            contador += 1;
+        }
+
+    }
+</script>

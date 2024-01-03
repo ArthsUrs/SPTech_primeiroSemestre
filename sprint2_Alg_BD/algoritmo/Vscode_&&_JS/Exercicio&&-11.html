@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="i_passagens">
+        Quantas passagens deseja adquirir?
+    </label>
+    <input type="number" id="i_passagens">
+
+    <button onclick="AnalisePassagens()">passagens</button> <br>
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    
+    function AnalisePassagens() {
+
+var qtdPassagem = Number(i_passagens.value);
+var valorPass = (qtdPassagem * 4.40);
+
+if (qtdPassagem >= 8 && qtdPassagem <= 50) {
+
+    if (qtdPassagem >= 8 && qtdPassagem <= 19) {
+        div_p.innerHTML = `Total a pagar: R$${valorPass - (valorPass * 0.03)}`
+    }
+
+    if (qtdPassagem >= 20 && qtdPassagem <= 49) {
+        div_p.innerHTML = `Total a pagar: R$${valorPass - (valorPass * 0.05)}`
+    }
+
+    if (qtdPassagem == 50) {
+        div_p.innerHTML = `Total a pagar: R$${valorPass - (valorPass * 0.07)}`
+    }
+}
+
+if (qtdPassagem < 8 && qtdPassagem > 50) {
+    alert("Quantidade inválida para o Fidelidade!")
+}
+
+
+}
+
+
+</script>
+</script>

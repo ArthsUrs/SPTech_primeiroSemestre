@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Preferencias de empresa</h1>
+    <label for="i_nomeEmpresa">
+        Insira o nome da empresa
+    </label>
+    <input type="text" id="i_nomeEmpresa"> <br>
+
+    <label for="i_valorBolsa">
+        Qual o valor da bolsa da empresa
+    </label>
+    <input type="number" id="i_valorBolsa"> <br>
+
+    <label for="i_vr">
+        Qual o valor do VR
+    </label>
+    <input type="number" id="i_vr"> <br>
+
+    <label for="i_tempDeslocamento">
+        Qual o tempo de deslocamento?
+    </label>
+    <input type="number" id="i_tempDeslocamento"> <br>
+
+    <button onclick="AnaliseEmpresa()">
+        É prefereida?
+    </button>
+</body>
+
+</html>
+
+<script>
+    function AnaliseEmpresa() {
+        var emp = i_nomeEmpresa.value;
+        var bolsa = Number(i_valorBolsa.value);
+        var desloc = Number(i_tempDeslocamento.value); 
+        var vr = Number(i_vr.value)
+        
+        if (bolsa >= 1800 || desloc <= 30 || vr >= 20) alert (`A empresa ${emp}, pode ser uma de suas preferidas!!`);
+        else alert(`A empresa ${emp}, pode não ser de suas preferencias!`);KeyframeEffect
+    }
+</script>

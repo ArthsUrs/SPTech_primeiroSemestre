@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_rendaIndiv">
+        Qual sua renda individual?
+    </label>
+    <input type="number" id="i_rendaIndiv">
+
+    <label for="i_rendaFamiliar">
+        Qual sua renda Familiar?
+    </label>
+    <input type="number" id="i_rendaFamiliar">
+
+    <button onclick="terBeneficio()">Verificar Beneficio</button>
+</body>
+
+</html>
+
+<script>
+    function terBeneficio() {
+        var rendaF = Number(i_rendaFamiliar.value);
+        var rendaI = Number(i_rendaIndiv.value);
+        
+        if (rendaF <= 3000 || rendaI <= 2000) alert("Você terá fireito a o benefício!");
+        else alert("Você não terá o beneficio :(")
+    }
+</script>

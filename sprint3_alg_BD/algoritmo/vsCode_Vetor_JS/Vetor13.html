@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_resultado">Selecione o resultado do jogo:</label>
+
+    <select id="i_resultado">
+        <option value="nada">Indique o resultado</option>
+        <option value="Vitoria">Vitoria</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select>
+    
+    <button onclick="Jogos()">Registrar jogo</button><br><br>
+
+
+    <label for="input_pesquisa">
+        Indique qual jogo deseja saber o resultado:
+    </label>
+    <input id="input_pesquisa" oninput="consulta()"><br><br>
+
+    <div id="mensagem"></div>
+
+    <div id="mensagem2"></div>
+</body>
+
+</html>
+
+<script>
+    var jogos = [];
+
+    function Jogos() {
+        var resultado = i_resultado.value;
+
+        if (resultado == 'nada') {
+            alert('Escolha um resultado valido')
+        } else {
+            if (resultado == 'Vitoria') {
+                jogos.push('Vitoria');
+            } else if (resultado == 'Empate') {
+                jogos.push('Empate');
+            } else {
+                jogos.push('Derrota');
+            }
+
+            var vitoria = 0;
+            var empate = 0;
+            var derrota = 0;
+            var pontos = 0;
+
+            for (var i = 0;
+                i < jogos.length;
+                i++
+            ) {
+                if (jogos[i] == 'Vitoria') {
+                    vitoria++;
+                    pontos += 3;
+                } else if (jogos[i] == 'Empate') {
+                    empate++;
+                    pontos++;
+                } else {
+                    derrota++;
+                }
+            }
+
+            var pontosPossiveis = (jogos.length * 3);
+            var aproveitamento = ((pontos / pontosPossiveis) * 100);
+
+            mensagem.innerHTML = `O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas<br>
+            Pontuação total: ${pontos} pontos <br>
+            Aproveitamento: ${aproveitamento}% `;
+        }
+    }
+
+    function consulta() {
+
+        var pesquisa = input_pesquisa.value;
+        var frase = `Não foi cadastrado um ${pesquisa}º jogo`
+
+
+        if ((pesquisa - 1) < 0) {
+            frase = "";
+        } else if ((pesquisa - 1) > jogos.length) {
+            mensagem2.innerHTML = frase
+        } else {
+            if (jogos[pesquisa - 1] == 'Vitoria') {
+                frase = `No ${pesquisa}º jogo, o time Ganhou`
+            } else if (jogos[pesquisa - 1] == 'Empate') {
+                frase = `No ${pesquisa}º jogo, o time Empatou`
+            } else {
+                frase = `No ${pesquisa}º jogo, o time Perdeu`
+            }
+        }
+        mensagem2.innerHTML = frase;
+    }
+
+</script>

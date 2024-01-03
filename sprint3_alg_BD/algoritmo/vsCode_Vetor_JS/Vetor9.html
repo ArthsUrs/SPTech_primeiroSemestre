@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quais os projetos que ja fez na sua vida?
+    <input type="text" id="i_projetoVida">
+
+    <button onclick="RegistroProjeto()">
+        Registrar projetos
+    </button>
+
+    <button onclick="MostrarProjetos()">
+        Mostrar projetos
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+
+    <div id="mensagem2">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    projetos = [];
+
+    function RegistroProjeto() {
+        var nomeProjeto = i_projetoVida.value;
+
+        mensagem.innerHTML = ""
+
+        projetos.push(nomeProjeto);
+
+        if (projetos.length <= 4) {
+            mensagem.innerHTML += `Você já fez ${projetos.length} projetos. Por isso você é um profissional <strong>Junior</strong> <br>`
+        } else if (projetos.length <= 12) {
+            mensagem.innerHTML += `Você já fez ${projetos.length} projetos. Por isso você é um profissional <strong>Pleno</strong><br>`
+        } else mensagem.innerHTML += `Você já fez ${projetos.length} projetos. Por isso você é um profissional <strong>Sênior</strong><br>`
+    }
+
+    function MostrarProjetos() {
+        var nomeProjeto = i_projetoVida.value;
+
+        mensagem2.innerHTML = "";
+
+        projetos.push(nomeProjeto);
+
+        for (
+            contador = 1;
+            contador < projetos.length;
+            contador += 1
+        ) {
+            mensagem2.innerHTML += `${projetos[projetos.length - contador]} <br>`
+        }
+    }
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_valorTabuada">
+        qual a tabuada quer ver na tela (2 a 9)
+    </label>
+    <select id="i_valorTabuada"> 
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="3">4</option>
+        <option value="3">5</option>
+        <option value="3">6</option>
+        <option value="3">7</option>
+        <option value="3">8</option>
+        <option value="3">9</option>
+    </select>
+
+    <label for="i_valorLimiteTabuada">
+        até que número a tabuada deve ser construída
+    </label>
+    <input type="number" id="i_valorLimiteTabuada">
+
+    <button onclick="calculadoraTabuada()">
+        ver Tabuada do numero
+    </button>
+
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function calculadoraTabuada() {
+        var NumTabuada = Number(i_valorTabuada.value);
+        var LimiteTabuada = Number(i_valorLimiteTabuada.value);
+        var contador = 1;
+
+        mensagem.innerHTML = ""
+
+        while (contador <= LimiteTabuada) { 
+           if(NumTabuada * contador % 2 == 0) {
+            mensagem.innerHTML += `<p style = "color: blue";>${NumTabuada} X ${contador} = ${NumTabuada * contador} </p> <br>`;
+           } else {
+            mensagem.innerHTML += `<p style = "color: red";>${NumTabuada} X ${contador} = ${NumTabuada * contador} </p> <br>`;
+           }
+
+            contador += 1;
+        }
+    }
+</script>

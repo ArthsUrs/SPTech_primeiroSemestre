@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="i_emailUser">
+        Qual o email do usuário
+    </label>
+    <input type="text" id="i_emailUser">
+<br>
+    <label for="i_senhaUser">
+        Qual a senha do usuário?
+    </label>
+    <input type="password" id="i_senhaUser">
+<br>
+    <button onclick="login()">
+        entrar em sua conta
+    </button>
+</body>
+</html>
+
+<script>
+    function login() {
+        var email = i_emailUser.value;
+        var senha = i_senhaUser.value;
+
+        if (email == "SPTech" && senha == "digital") alert("usuario autenticado com sucesso!")
+    }
+</script>
+

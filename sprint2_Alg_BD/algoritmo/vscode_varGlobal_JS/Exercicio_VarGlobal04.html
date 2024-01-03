@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img style="rotate: 180;" id="GifTest" src="https://i.gifer.com/XkYl.gif" >
+
+    <br><br>
+
+    <label for="i_valorDistancia"></label>
+    <input type="number" id="i_valorDistancia">
+
+    <button onclick="irEsquerda()">
+        ir p/ esquerda
+    </button>
+
+    <button onclick="irDireita()">
+        ir p/ direita
+    </button>
+</body>
+
+</html>
+
+<script>
+    var image = 0;
+    var inverter = 0;
+
+    function irDireita() {
+    inverter = 1
+    image += Number(i_valorDistancia.value);
+    GifTest.style.marginLeft = `${image}px`;
+    GifTest.style.transform = `scaleX(${inverter})`
+    }
+
+    function irEsquerda() {
+        inverter = -1
+        image -= Number(i_valorDistancia.value);
+        GifTest.style.marginLeft = `${image}px`;
+        GifTest.style.transform = `scaleX(${inverter})`
+    }
+</script>

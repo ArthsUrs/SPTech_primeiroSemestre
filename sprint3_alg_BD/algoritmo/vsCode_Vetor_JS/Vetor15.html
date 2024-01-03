@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="i_nomeProduto">Digite o Nome do produto</label>
+        <input id="i_nomeProduto"><br>
+
+
+    <label for="i_precoProduto">
+        Digite o Preço de compra:
+    </label>
+
+    <input type="number" id="i_precoProduto"><br>
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <button onclick="consultar()">Relatório de estoque</button><br>
+
+    <div id="mensagem">
+
+    </div>
+
+    <div id="mensagem2">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var nomeProduto = [];
+    var precoProduto = [];
+
+    function cadastrar() {
+
+        var nome = i_nomeProduto.value;
+        var preco = Number(i_precoProduto.value);
+
+        nomeProduto.push(nome);
+        precoProduto.push(preco);
+    }
+
+    function consultar() {
+        mensagem.innerHTML = "";
+        mensagem2.innerHTML = "";
+
+
+        var maiorPreco = 0;
+        var produtoMaiorPreco = "";
+        var menorPreco = 0;
+        var produtoMenorPreco = "";
+        var somar = 0;
+
+        
+        mensagem.innerHTML = `Total de produtos: ${nomeProduto.length}<br>`
+
+ 
+         produtoMenorPreco = nomeProduto
+        [0];
+        menorPreco = precoProduto[0];
+
+        for (var i = 0; i < nomeProduto.length; i++) {
+
+            somar += precoProduto[i];
+
+            if (precoProduto[i] > maiorPreco) {
+                maiorPreco = precoProduto[i];
+                produtoMaiorPreco = nomeProduto[i];
+            } else if (precoProduto[i] < menorPreco) {
+                menorPreco = precoProduto[i];
+                produtoMenorPreco = nomeProduto[i];
+            }
+
+            var precoFinal = precoProduto[i] * 1.25;
+
+            mensagem.innerHTML += `Produto ${i + 1}:${nomeProduto[i]} <br>
+            Preço de compra: ${precoProduto[i]}  .Vender por R$${precoFinal}<br> `;
+
+        }
+
+        var media = somar / nomeProduto.length;
+
+        mensagem2.innerHTML += `<br>O produto de maior valor é: ${produtoMaiorPreco}<br>
+        O produto de menor valor é: ${produtoMenorPreco}<br>
+        A somar dos preços de compra dos produtos: ${somar}<br>
+        A média de preço de venda dos produtos: ${media}`;
+    }
+</script>

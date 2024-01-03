@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Quaul a no do aluno?</label>
+        <input type="number" id="i_notaA">
+
+    <button onclick="notaAluno()">A nota é valida?</button>
+</body>
+</html>
+
+
+<script>
+    function notaAluno() {
+        var nota = Number(i_notaA.value);
+
+        if (nota >= 0 && nota <= 10) alert(`"Nota válida!" `) 
+        else alert("Onde já se viu nota menor que 0 e maior que 10?!" )
+    }
+</script>

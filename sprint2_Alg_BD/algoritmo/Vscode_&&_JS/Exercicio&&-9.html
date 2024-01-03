@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        montagem da seleção
+    </h1>
+    <label for="i_alturaInicial">Qual a altura inicial para a selação?</label>
+    <input type="number" id="i_alturaInicial"> <br>
+
+    <label for="i_alturaFinal">Qual a altura final para a seleção?</label>
+    <input type="number" id="i_alturaFinal"><br>
+
+    <h2>
+        seleção de pilotos
+    </h2>
+
+    <label for="i_nomePiloto">Qual o nome do piloto?</label>
+    <input type="text" id="i_nomePiloto"> <br>
+
+    <label for="i_alturaPiloto">Qual a altura do piloto?</label>
+    <input type="Number" id="i_alturaPiloto"> <br> <br>
+
+    <button onclick="selecaoPilotos()">
+        Verificar Piloto
+    </button>
+
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function selecaoPilotos() {
+
+        var altInicial = Number(i_alturaInicial.value);
+        var altFinal = Number(i_alturaFinal.value);
+
+        var nomePiloto = i_nomePiloto.value;
+        var altPiloto = Number(i_alturaPiloto.value);
+
+        if (altInicial > altFinal || altInicial < 99)
+            alert("Erro!");
+
+        else if (altPiloto <= altFinal && altPiloto >= altInicial) mensagem.innerHTML += "<br>ESTÁ APROVADO PARA SEGUIR";
+          
+        else mensagem.innerHTML += "<br> SINTO MUITO, FICOU DE COMES";
+    }
+
+
+
+</script>

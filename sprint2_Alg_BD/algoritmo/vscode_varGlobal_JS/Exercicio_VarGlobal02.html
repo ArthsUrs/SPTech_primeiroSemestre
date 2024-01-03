@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="i_salarioUser">Qual o salario do usuario?</label>
+        <input type="number" id="i_salarioUser">
+
+    <button onclick="functionConfirm()">Confirmar salário</button>
+    <button onclick="functionConta100()">Pagar conta de 100</button>
+    <button onclick="functionConta500()">Pagar conta de 500</button>
+    <button onclick="functioGanhar()">Ganhar na loteria</button>
+
+    <div id="grana">
+    </div>
+
+</body>
+</html>
+
+<script>
+    var grana_atual = 0; /* Caso queira armazenar, ou ser chamada em duas funções, ou até mesmo um valor que precisa ser atualizado ao longo das funçoes, cria-se uma variavel global */
+
+    function functionConfirm() {
+        grana_atual = Number(i_salarioUser.value);
+        grana.innerHTML = `Seu saldo é de: ${grana_atual}`
+    };
+
+    function functionConta100() {
+        grana_atual -= 100;
+        grana.innerHTML += `<br>Sua grana atual é de:${grana_atual}`   
+    };
+
+    function functionConta500() {
+        grana_atual -= 500;
+        grana.innerHTML += `<br>Sua grana atual é de: ${grana_atual}`
+    };
+
+    function functioGanhar() {
+        grana_atual += 2000;
+        grana.innerHTML =+ `<br>Sua grana atual é de: ${grana_atual}`
+    };
+
+</script>

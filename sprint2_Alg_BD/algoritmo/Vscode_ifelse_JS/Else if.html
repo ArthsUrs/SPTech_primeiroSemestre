@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Escreva o numero</span>
+        <input id="i_numero" type="number">
+
+    <button onclick="numero()">Clique aqui!</button>
+</body>
+</html>
+
+<script>
+    function numero() {
+
+        var n = Number(i_numero.value);
+
+        if(n < 25) alert(`O Numero é menor que 25`);
+
+        else if (n <= 50) alert("O numero está entre 25 e 50");
+
+        else if (n <= 75) alert("O numero está entre 50 e 75");
+
+        else alert("O numero é maior que 75");
+
+//        if (numero < 25) {
+//            alert(`O número é menor que 25!`)
+//        } 
+//
+//        if (numero >= 25) {
+//            if (numero < 50) { 
+//            alert(`O numero está entre 25 e 50`)
+//        }
+//    } 
+//        if (numero > 50) {
+//            alert(`O numero é maior que 50`)
+//        }
+    
+        
+    }
+</script>

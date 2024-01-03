@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual o nome de seus filhos?
+    <input type="text" id="i_nomeFilhos">
+
+    <button onclick="estocar()">
+        Cadastrar
+    </button>
+
+    <button onclick="Atualizar()">
+        Atualizar familia
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    Filhos = [];
+
+    function estocar() {
+        var filhos = i_nomeFilhos.value;
+        Filhos.push(filhos);
+
+        // for (var i = 1; i < Filhos.length; i++) {
+//             if (Filhos[i] == filhos) {
+                // mensagem.innerHTML += "Não pode mais de 1 filho com o mesmo nome!"
+            // } else {
+            // }
+        // }
+    }
+
+    function Atualizar() {
+        mensagem.innerHTML = ""
+
+        for (var i = 1; i < Filhos.length; i++) {
+            {
+                mensagem.innerHTML = `Você tem ${Filhos.length} filhos<br>
+                Seu custo mensal será aproximadamente R$${Filhos.length * 3000} se colocá-los em escola particular <br> ou <br>  
+                R$${Filhos.length * 1500} se eles estudarem em escola pública`
+            }
+        }
+    }
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Entre com a quantidade de agua engarrafada do estoque
+    <input type="number" id="i_aguaEngarrafada">
+    <br><br>
+    Entre com a quantidade de cocos fechados do estoque
+    <input type="number" id="i_cocoFechado">
+    <br><br>
+    <button onclick="quiosque()">
+        Abrir o quiosque
+    </button>
+    <br>
+    <div id="mensagem">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var esqtCoco = 0
+    var esqtAgua = 0
+
+
+    function quiosque() {
+        var coco = Number(i_cocoFechado.value);
+        var agua = Number(i_aguaEngarrafada.value);
+        var contador = 1;
+
+        
+
+        mensagem.innerHTML = "";
+
+        if (agua < 100 || coco < 200) {
+            if (agua < 100) {
+                mensagem.innerHTML = `Com essa quantidade de Água engarrafada não dá para abrir o quiosque <br>`;
+            }
+            if (coco < 200) {
+                mensagem.innerHTML = `Com essa quantidade de Coco fechado não dá para abrir o quiosque <br>`;
+            }
+        } else {
+            if (agua >= 100 && agua <= 1000) {
+                mensagem.innerHTML += `Engarrafe mais água de coco <br>`;
+            }
+            if (coco >= 200 && coco <= 2000) {
+                mensagem.innerHTML += `Compre mais cocos <br>`
+            }
+            mensagem.innerHTML += ` ----------- <strong> ESTOQUE INICIAL </strong> ---------------- <br> <br>
+                O estoque atual de cocos é de ${esqtCoco + coco} <br>
+                O estoque atual de agua é de ${esqtAgua + agua} <br>
+            `
+
+
+        }
+    }
+</script>

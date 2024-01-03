@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="contagem()">
+        O que acha da matéria de algoritmos?
+    </button>
+
+    <div id="mensagem">
+
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    function contagem() {
+        var phrase = "A materia de Algoritmos é muito legal, amamos professor Caio e JotaPê!!"
+        var numero = 1;
+
+        mensagem.innerHTML = ""
+        while (numero <= 7) {mensagem.innerHTML += `${phrase} <br>`
+        numero += 1;
+    }
+    }
+</script>
